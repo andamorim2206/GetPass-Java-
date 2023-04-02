@@ -7,8 +7,12 @@ import java.util.List;
 public class Category {
     @Id
     private long id;
-    @Column(name = "nome")
+    @Column(name = "name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user_id;
 
     @OneToMany(mappedBy = "crendentials")
     private List<Crendentials> crendentials;
@@ -28,4 +32,8 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
+    public User getUser(){ return user_id;}
+
+    public void setUser(User user_id){ this.user_id = user_id; }
 }

@@ -9,10 +9,10 @@ public class User {
     @Id
     private long id;
 
-    @Column(name = "nome")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "senha")
+    @Column(name = "password")
     private String password;
 
     @Column(name = "email")
@@ -20,6 +20,9 @@ public class User {
 
     @OneToMany(mappedBy = "crendentials")
     private List<Crendentials> crendentials;
+
+    @OneToMany(mappedBy = "user")
+    private List<Crendentials> user;
 
     public Long getId() {
         return id;

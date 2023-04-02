@@ -10,10 +10,10 @@ public class Annotation {
     @Id
     private long id;
 
-    @Column (name = "titulo")
+    @Column (name = "title")
     private String title;
 
-    @Column (name = "conteudo")
+    @Column (name = "content")
     private String content;
 
     public Long getId() {
