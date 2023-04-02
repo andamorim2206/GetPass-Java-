@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="anotacoes")
+@Table(name="annotation")
 public class Annotation {
     @Id
     private long id;
