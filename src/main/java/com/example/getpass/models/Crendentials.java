@@ -14,14 +14,14 @@ public class Crendentials {
     @Column(name = "password")
     private String password;
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "user", referencedColumnName = "id")
     private User user_id;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    @JoinColumn(name = "category", referencedColumnName = "id")
     private Category category_id;
 
-    @OneToMany(mappedBy = "historic")
+    @OneToMany(mappedBy = "crendentials")
     private List<Historic> historics;
 
     public Long getId() {return id;}
@@ -51,5 +51,13 @@ public class Crendentials {
     public Category getCategory(){return category_id;}
 
     public void setCategory(Category category_id){ this.category_id = category_id;}
+
+    public List<Historic> getHistorics() {
+        return historics;
+    }
+
+    public void setHistorics(List<Historic> historics) {
+        this.historics = historics;
+    }
 
 }

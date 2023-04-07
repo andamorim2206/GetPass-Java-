@@ -18,7 +18,7 @@ public class Historic {
     private String change_date;
 
     @ManyToOne
-    @JoinColumn(name = "crendetials_id", referencedColumnName = "id")
+    @JoinColumn(name = "crendetials", referencedColumnName = "id")
     private Crendentials crendentials_id;
 
 

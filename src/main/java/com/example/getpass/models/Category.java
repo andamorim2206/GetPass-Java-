@@ -11,10 +11,10 @@ public class Category {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "user", referencedColumnName = "id")
     private User user_id;
 
-    @OneToMany(mappedBy = "crendentials")
+    @OneToMany(mappedBy = "category")
     private List<Crendentials> crendentials;
 
     public Long getId() {
@@ -36,4 +36,12 @@ public class Category {
     public User getUser(){ return user_id;}
 
     public void setUser(User user_id){ this.user_id = user_id; }
+
+    public List<Crendentials> getCredentials() {
+        return crendentials;
+    }
+
+    public void setCredentials(List<Crendentials> credentials) {
+        this.crendentials = credentials;
+    }
 }
